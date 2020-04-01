@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:worldtime/services/world_time.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,7 @@ class _LoadingState extends State<Loading> {
 
     WorldTime instance = WorldTime(location: "Istanbul", flag: "turkey.jpg", url: "Europe/Istanbul");
     await instance.getTime();
-    sleep(Duration(seconds: 2));
+    //sleep(Duration(seconds: 2));
 
     Navigator.pushReplacementNamed(context, "/home", arguments: {
       "location": instance.location,
@@ -37,7 +36,7 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       backgroundColor: Colors.blue[900],
         body: Center(
-          child: SpinKitFadingCube(
+          child: SpinKitSpinningCircle(
             color: Colors.white,
             size: 85,
           )

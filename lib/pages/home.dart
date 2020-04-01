@@ -29,31 +29,9 @@ class _HomeState extends State<Home> {
           )
         ),
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(0,150,0,0),
+          padding: const EdgeInsets.fromLTRB(0,230,0,0),
           child: Column(
             children: <Widget>[
-              FlatButton.icon(
-                onPressed: () async{
-                  dynamic result = await Navigator.pushNamed(context, "/location");
-                  setState(() {
-                    data = {
-                      "location": result["location"],
-                      "flag": result["flag"],
-                      "time": result["time"],
-                      "isDaytime": result["isDaytime"]
-                    };
-                  });
-                },
-                icon: Icon(Icons.edit_location,
-                  color: Colors.grey[300],
-                ),
-                label: Text("Change Location",
-                  style: TextStyle(
-                      color: Colors.grey[300]
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -73,6 +51,28 @@ class _HomeState extends State<Home> {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 66,
+                ),
+              ),
+              SizedBox(height: 50,),
+              FlatButton.icon(
+                onPressed: () async{
+                  dynamic result = await Navigator.pushNamed(context, "/location");
+                  setState(() {
+                    data = {
+                      "location": result["location"],
+                      "flag": result["flag"],
+                      "time": result["time"],
+                      "isDaytime": result["isDaytime"]
+                    };
+                  });
+                },
+                icon: Icon(Icons.edit_location,
+                  color: Colors.grey[300],
+                ),
+                label: Text("Change Location",
+                  style: TextStyle(
+                      color: Colors.grey[300]
+                  ),
                 ),
               ),
             ],
